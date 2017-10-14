@@ -1,0 +1,6 @@
+unzip VNP14IMGTDL_NRT_USA_contiguous_and_Hawaii_7d.zip 
+unzip VNP14IMGTDL_NRT_USA_contiguous_and_Hawaii_48h.zip 
+unzip VNP14IMGTDL_NRT_USA_contiguous_and_Hawaii_24h.zip 
+unzip MODIS_C6_USA_contiguous_and_Hawaii_7d.zip 
+unzip MODIS_C6_USA_contiguous_and_Hawaii_48h.zip 
+unzip MODIS_C6_USA_contiguous_and_Hawaii_24h.zip 
