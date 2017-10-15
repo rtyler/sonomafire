@@ -1,0 +1,28 @@
+#!/usr/bin/env ruby
+
+require 'colorize'
+require 'csv'
+
+firstRow = true
+
+phoneIndex = nil
+addressIndex = nil
+lastUpdatedIndex = nil
+
+s = CSV.generate do |csv|
+  CSV.parse(STDIN.read) do |row|
+    if firstRow
+      phoneIndex = row.find_index 'Phone'
+      addressIndex = row.find_index 'Address'
+      lastUpdatedIndex = row.find_index 'Last updated'
+      csv << ['Pharmacy', 'Address', 'Phone', 'Last Updated']
+    else
+      # Skip anything we don't have an address for
+      next unless row[addressIndex]
+      csv << [row[0], row[addressIndex], row[phoneIndex], row[lastUpdatedIndex]]
+    end
+    firstRow = false
+  end
+end
+
+puts s
